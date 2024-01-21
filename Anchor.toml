@@ -1,0 +1,25 @@
+[features]
+seeds = true
+skip-lint = false
+
+[programs.localnet]
+shop22="11111111111111111111111111111111"
+
+[registry]
+url = "https://api.apr.dev"
+
+[provider]
+cluster = "Localnet"
+wallet = "~/.config/solana/id.json"
+
+[test]
+startup_wait = 100000
+
+[test.validator]
+url = "https://api.mainnet-beta.solana.com"
+
+[[test.validator.clone]]
+address = "metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s"
+
+[scripts]
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 js-tests/**/*.ts"
